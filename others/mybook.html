@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Books - BookReads</title>
+    <link rel="stylesheet" href="myboo.css">
+</head>
+<body>
+    <header>
+        <div class="logo">BookReads</div>
+        <nav>
+            <ul>
+                <li><a href="first.html">Home</a></li>
+                <li><a href="mybook.html">My Books</a></li>
+                <li class="dropdown">
+                    <a href="#">Browse</a>
+                    <div class="dropdown-content">
+                        <a href="#">Recommendations</a>
+                        <a href="#">Choice Awards</a>
+                        <a href="#">Giveaways</a>
+                        <a href="#">New Releases</a>
+                        <a href="#">Lists</a>
+                        <a href="#">Explore</a>
+                    </div>
+                </li>
+                <li><a href="#">Community</a></li>
+            </ul>
+        </nav>
+        <input type="text" placeholder="Search books" class="search-bar">
+        <div class="user-icons">
+            <span class="icon">🔍</span>
+            <span class="icon">🔔</span>
+            <span class="icon">📧</span>
+            <span class="icon">👤</span>
+        </div>
+    </header>
+    
+    <main>
+        <aside class="sidebar">
+            <h3>Bookshelves</h3>
+            <ul>
+                <li>All (4)</li>
+                <li>Read (0)</li>
+                <li>Currently Reading (0)</li>
+                <li>Want to Read (4)</li>
+            </ul>
+            <button class="add-shelf">Add shelf</button>
+
+            <h3>Your Reading Activity</h3>
+            <ul>
+                <li>Review Drafts</li>
+                <li>Reading Challenge</li>
+                <li>Year in Books</li>
+                <li>Reading Stats</li>
+            </ul>
+        </aside>
+        
+        <section class="book-list">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cover</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Avg Rating</th>
+                        <th>Review</th>
+                        <th>Date Added</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="fourth_wing.jpg" alt="Book Cover"></td>
+                        <td>Libby Lost and Found</td>
+                        <td>Booth, Stephanie</td>
+                        <td>3.72</td>
+                        <td><button class="review-btn">Write a review</button></td>
+                        <td>Oct 28, 2024</td>
+                    </tr>
+                    <tr>
+                        <td><img src="harry_potter.jpg" alt="Book Cover"></td>
+                        <td>Stand Up!: A Graphic Novel</td>
+                        <td>Sharp, Tori</td>
+                        <td>4.06</td>
+                        <td><button class="review-btn">Write a review</button></td>
+                        <td>Oct 28, 2024</td>
+                    </tr>
+                    <tr>
+                        <td><img src="atomic_habits.jpeg" alt="Book Cover"></td>
+                        <td>A Song to Drown Rivers</td>
+                        <td>Liang, Ann</td>
+                        <td>4.00</td>
+                        <td><button class="review-btn">Write a review</button></td>
+                        <td>Oct 28, 2024</td>
+                    </tr>
+                    <tr>
+                        <td><img src="you_like_it_darker.jpeg" alt="Book Cover"></td>
+                        <td>The Striker (Gods of the Game, #1)</td>
+                        <td>Huang, Ana</td>
+                        <td>4.02</td>
+                        <td><button class="review-btn">Write a review</button></td>
+                        <td>Oct 28, 2024</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    
+    <script src="my.js"></script>
+</body>
+</html>

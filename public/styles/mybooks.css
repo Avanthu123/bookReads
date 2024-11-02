@@ -1,0 +1,349 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-color: #f4f1ea;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f4f1ea;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ded8ce;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #382110;
+}
+
+/* Navigation Styles */
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    position: relative;
+}
+
+header nav ul li a {
+    color: #382110;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 0;
+    display: block;
+}
+
+header nav ul li a:hover {
+    color: #775e3b;
+}
+
+/* Dropdown Styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f4f1ea;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border: 1px solid #ded8ce;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #382110;
+    padding: 8px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background-color: #ede6d6;
+}
+
+/* Favorite Genres Section */
+.favorite-genres {
+    border-top: 1px solid #ded8ce;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.favorite-genres h4 {
+    color: #382110;
+    font-size: 12px;
+    margin: 0 20px 10px;
+}
+
+/* Search and User Icons */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #ded8ce;
+    border-radius: 3px;
+    padding: 5px 15px;
+    margin: 0 20px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    width: 200px;
+    background: #ffffff;
+    color: #382110;
+}
+
+.user-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.user-icons .icon {
+    cursor: pointer;
+    font-size: 18px;
+    color: #382110;
+}
+
+/* Main Content Styles */
+main {
+    display: flex;
+    padding: 20px;
+    background-color: #f4f1ea;
+}
+
+.sidebar {
+    width: 200px;
+    padding: 20px;
+    background-color: #f4f1ea;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    color: #382110;
+    font-size: 18px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #382110;
+    display: block;
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+.sidebar ul li a:hover {
+    color: #775e3b;
+}
+
+.add-shelf {
+    width: 100%;
+    padding: 8px 12px;
+    background-color: #382110;
+    color: #f4f1ea;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.add-shelf:hover {
+    background-color: #58371F;
+}
+
+.activity-links p {
+    margin: 10px 0;
+    cursor: pointer;
+    color: #382110;
+    font-size: 14px;
+}
+
+.activity-links p:hover {
+    color: #775e3b;
+}
+
+/* Book Table Styles */
+.main-content {
+    flex-grow: 1;
+    padding: 20px 30px;
+}
+
+.book-table {
+    background: #ffffff;
+    border: 1px solid #ded8ce;
+}
+
+.book-row {
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    border-bottom: 1px solid #ded8ce;
+}
+
+.book-row.header {
+    font-weight: bold;
+    background-color: #f4f1ea;
+}
+
+.book-row span {
+    flex: 1;
+    padding: 5px 10px;
+    color: #382110;
+}
+
+.book-row .cover img {
+    height: 60px;
+    width: auto;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Rating Select Styles */
+select {
+    padding: 5px;
+    border: 1px solid #ded8ce;
+    border-radius: 3px;
+    background-color: #ffffff;
+    color: #382110;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.delete-btn {
+    background-color: #d61a1a;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #b51515;
+}
+
+.sidebar ul li a.active {
+    font-weight: bold;
+    color: #58371F;
+}
+
+select {
+    padding: 5px;
+    border: 1px solid #ded8ce;
+    border-radius: 3px;
+    background-color: white;
+}
+
+/* Review Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #f4f1ea;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #ded8ce;
+    width: 50%;
+    border-radius: 3px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    color: #382110;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ded8ce;
+    border-radius: 3px;
+    resize: vertical;
+}
+
+.modal-content button {
+    background-color: #382110;
+    color: #f4f1ea;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #58371F;
+}
+
+.add-review-btn, .edit-review-btn {
+    background-color: #382110;
+    color: #f4f1ea;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.add-review-btn:hover, .edit-review-btn:hover {
+    background-color: #58371F;
+}
+
+/* Align table columns */
+.book-row {
+    display: grid;
+    grid-template-columns: 100px 2fr 1.5fr 1fr 2fr 1fr 1.5fr;
+    padding: 15px;
+    align-items: center;
+    border-bottom: 1px solid #ded8ce;
+    gap: 10px;
+}
+
+.book-row.header {
+    font-weight: bold;
+    background-color: #f4f1ea;
+}
+
+.book-row span {
+    padding: 5px;
+}

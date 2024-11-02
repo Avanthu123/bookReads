@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookReads</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <header>
+        <div class="logo">BookReads</div>
+        <nav>
+            <ul class="center-menu">
+                <li><a href="/api/books/global">Home</a></li>
+                <li><a href="/api/books/my-books">My Books</a></li>
+                <li class="dropdown">
+                    <a href="#">Browse</a>
+                    <div class="dropdown-content">
+                        <a href="#">Recommendations</a>
+                        <a href="#">Choice Awards</a>
+                        <a href="#">Giveaways</a>
+                        <a href="#">New Releases</a>
+                        <a href="#">Lists</a>
+                        <a href="#">Explore</a>
+                        <a href="#">News & Interviews</a>
+                        <div class="favorite-genres">
+                            <h4>FAVORITE GENRES</h4>
+                            <a href="#">Art</a>
+                            <a href="#">Classics</a>
+                            <a href="#">Fantasy</a>
+                            <a href="#">Fiction</a>
+                            <a href="#">Horror</a>
+                            <a href="#">Mystery</a>
+                            <a href="#">Poetry</a>
+                            <a href="#">Psychology</a>
+                            <a href="#">All Genres</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">Community</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search books">
+            <span class="icon">🔍</span>
+        </div>
+        <div class="user-icons">
+            <span class="icon">🔔</span>
+            <span class="icon">📧</span>
+            <span class="icon">👤</span>
+        </div>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <div class="section">
+                <h3>Currently Reading</h3>
+                <p>What are you reading?</p>
+                <input type="text" placeholder="Search books">
+                <a href="#">Recommendations</a>
+            </div>
+            <div class="section">
+                <h3>2024 Reading Challenge</h3>
+                <p>Challenge yourself to read more this year!</p>
+                <input type="number" placeholder="Books in 2024">
+                <button>Start Challenge</button>
+            </div>
+            <div class="section">
+                <h3>Want to Read</h3>
+                <p>What do you want to read next?</p>
+                <a href="#">Recommendations</a>
+            </div>
+        </aside>
+
+        <section class="main-content">
+            <h1>Welcome to BookReads</h1>
+            <p>Meet your favorite book, find your reading community, and manage your reading life.</p>
+
+            <div class="book-list">
+                <% books.forEach(book => { %>
+                    <div class="book-item">
+                        <img src="<%= book.image %>" alt="Book Image">
+                        <div class="book-details">
+                            <h3><%= book.title %></h3>
+                            <p>by <%= book.author %></p>
+                            <p class="description"><%= book.description %></p>
+                            <form action="/api/books/my-books/add" method="POST">
+                                <input type="hidden" name="title" value="<%= book.title %>">
+                                <input type="hidden" name="author" value="<%= book.author %>">
+                                <input type="hidden" name="cover" value="<%= book.image %>">
+                                <input type="hidden" name="description" value="<%= book.description %>">
+                                <button type="submit" class="want-to-read">Want to Read</button>
+                            </form>
+                            <span class="rating">Rate it: ★★★★★</span>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

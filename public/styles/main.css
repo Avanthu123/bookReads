@@ -1,0 +1,285 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f1ea;
+    color: #382110;
+}
+
+.want-to-read.added {
+    background-color: #58371F;
+    cursor: default;
+}
+
+.center-menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+/* Main Content */
+main {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    padding: 20px;
+}
+
+.section {
+    background-color: #ffffff;
+    border: 1px solid #ded8ce;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+}
+
+.section h3 {
+    margin-top: 0;
+    color: #382110;
+    font-size: 18px;
+}
+
+.section p {
+    color: #382110;
+    margin: 10px 0;
+}
+
+.section input {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ded8ce;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.section button {
+    background-color: #382110;
+    color: #f4f1ea;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: Georgia, serif;
+    width: 100%;
+}
+
+.section button:hover {
+    background-color: #58371F;
+}
+
+.section a {
+    color: #382110;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+}
+
+.section a:hover {
+    color: #775e3b;
+}
+
+/* Main Content Area */
+.main-content {
+    flex-grow: 1;
+}
+
+.main-content h1 {
+    color: #382110;
+    margin-bottom: 10px;
+}
+
+.main-content p {
+    color: #382110;
+    margin-bottom: 20px;
+}
+
+/* Book List */
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.book-item {
+    background-color: #ffffff;
+    border: 1px solid #ded8ce;
+    padding: 15px;
+    border-radius: 3px;
+    display: flex;
+    gap: 15px;
+}
+
+.book-item img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.book-details {
+    flex-grow: 1;
+}
+
+.book-details h3 {
+    margin: 0 0 5px 0;
+    color: #382110;
+}
+
+.book-details p {
+    margin: 5px 0;
+    color: #382110;
+    font-size: 14px;
+}
+
+.description {
+    font-size: 13px;
+    margin: 10px 0;
+    color: #666666;
+}
+
+.want-to-read {
+    background-color: #382110;
+    color: #f4f1ea;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: Georgia, serif;
+    margin: 10px 0;
+}
+
+.want-to-read:hover {
+    background-color: #58371F;
+}
+
+.rating {
+    display: block;
+    color: #382110;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Header and Navigation Styles */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f4f1ea;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ded8ce;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #382110;
+}
+
+/* Navigation Styles */
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    position: relative;
+}
+
+header nav ul li a {
+    color: #382110;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 0;
+    display: block;
+}
+
+header nav ul li a:hover {
+    color: #775e3b;
+}
+
+/* Dropdown Styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f4f1ea;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border: 1px solid #ded8ce;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #382110;
+    padding: 8px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background-color: #ede6d6;
+}
+
+/* Favorite Genres Section */
+.favorite-genres {
+    border-top: 1px solid #ded8ce;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.favorite-genres h4 {
+    color: #382110;
+    font-size: 12px;
+    margin: 0 20px 10px;
+}
+
+/* Search and User Icons */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #ded8ce;
+    border-radius: 3px;
+    padding: 5px 15px;
+    margin: 0 20px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    width: 200px;
+    background: #ffffff;
+    color: #382110;
+}
+
+.user-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.user-icons .icon {
+    cursor: pointer;
+    font-size: 18px;
+    color: #382110;
+}

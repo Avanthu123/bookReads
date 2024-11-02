@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 24px;
+    color: #333;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    position: relative;
+}
+
+nav ul li {
+    margin-right: 20px;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Dropdown menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f4f4f4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 200px;
+    z-index: 1;
+    border: 1px solid #ddd;
+}
+
+.dropdown-content a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+}
+
+.dropdown-content a:hover {
+    background-color: #e1e1e1;
+}
+
+.dropdown-content h4 {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.user-icons {
+    display: flex;
+}
+
+.icon {
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+main {
+    display: flex;
+    padding: 20px;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #fff;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section h3 {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.section p {
+    font-size: 14px;
+    color: #666;
+}
+
+.main-content {
+    width: 80%;
+    padding: 20px;
+}
+
+.main-content h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.book-listings {
+    margin-top: 20px;
+}
+
+.book-item {
+    display: flex;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.book-item img {
+    width: 150px;
+    height: 200px;
+    border-radius: 5px;
+    margin-right: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.book-details h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+.book-details p {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+}
+
+.description {
+    color: #555;
+    font-size: 14px;
+}
+
+.want-to-read {
+    background-color: #6a6a6a;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.rating {
+    font-size: 14px;
+    color: #333;
+    margin-top: 5px;
+}

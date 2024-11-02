@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookReads</title>
+    <link rel="stylesheet" href="second.css">
+</head>
+<body>
+    <header>
+        <div class="logo">BookReads</div>
+        <nav>
+            <ul>
+                <li><a href="first.html">Home</a></li>
+                <li><a href="mybook.html">My Books</a></li>
+                <li class="dropdown">
+                    <a href="#">Browse</a>
+                    <div class="dropdown-content">
+                        <a href="#">Recommendations</a>
+                        <a href="#">Choice Awards</a>
+                        <a href="#">Giveaways</a>
+                        <a href="#">New Releases</a>
+                        <a href="#">Lists</a>
+                        <a href="#">Explore</a>
+                        <a href="#">News & Interviews</a>
+                        <div class="favorite-genres">
+                            <h4>FAVORITE GENRES</h4>
+                            <a href="#">Art</a>
+                            <a href="#">Classics</a>
+                            <a href="#">Fantasy</a>
+                            <a href="#">Fiction</a>
+                            <a href="#">Horror</a>
+                            <a href="#">Mystery</a>
+                            <a href="#">Poetry</a>
+                            <a href="#">Psychology</a>
+                            <a href="#">All Genres</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">Community</a></li>
+            </ul>
+        </nav>
+        <input type="text" placeholder="Search books">
+        <div class="user-icons">
+            <span class="icon">🔍</span>
+            <span class="icon">🔔</span>
+            <span class="icon">📧</span>
+            <span class="icon">👤</span>
+        </div>
+    </header>
+    
+    <main>
+        <section class="sidebar">
+            <div class="section">
+                <h3>Currently Reading</h3>
+                <p>What are you reading?</p>
+                <input type="text" placeholder="Search books">
+                <a href="#">Recommendations</a>
+            </div>
+            <div class="section">
+                <h3>2024 Reading Challenge</h3>
+                <p>Challenge yourself to read more this year!</p>
+                <input type="number" placeholder="Books in 2024">
+                <button>Start Challenge</button>
+            </div>
+            <div class="section">
+                <h3>Want to Read</h3>
+                <p>What do you want to read next?</p>
+                <a href="#">Recommendations</a>
+            </div>
+        </section>
+        
+        <section class="main-content">
+            <h1>Welcome to BookReads</h1>
+            <p>Meet your favorite book, find your reading community, and manage your reading life.</p>
+
+            <!-- Book Listings Section -->
+            <div class="book-listings">
+                <!-- Book 1 -->
+                <div class="book-item">
+                    <img src="fourth_wing.jpg" alt="Book Image 1">
+                    <div class="book-details">
+                        <h3>Fourth Wing</h3>
+                        <p>by Rebecca Yarros</p>
+                        <p class="description">A fantasy novel where Violet Sorrengail faces deadly trials to become a dragon rider, discovering strength and resilience in a ruthless world.</p>
+                        <button class="want-to-read">Want to Read</button>
+                        <span class="rating">Rate it: ★★★★★</span>
+                    </div>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="book-item">
+                    <img src="harry_potter.jpg" alt="Book Image 2">
+                    <div class="book-details">
+                        <h3>Harry Potter and the Prisoner of Azkaban</h3>
+                        <p>by J.K. Rowling</p>
+                        <p class="description">Harry returns to Hogwarts for his third year, facing the mysterious prisoner Sirius Black and uncovering secrets that change his life.</p>
+                        <button class="want-to-read">Want to Read</button>
+                        <span class="rating">Rate it: ★★★★★</span>
+                    </div>
+                </div>
+
+                <!-- Book 3 -->
+                <div class="book-item">
+                    <img src="atomic_habits.jpeg" alt="Book Image 3">
+                    <div class="book-details">
+                        <h3>Atomic Habits</h3>
+                        <p>by James Clear</p>
+                        <p class="description">This guide reveals how small changes in habits can lead to remarkable improvements in life, emphasizing consistency and growth.</p>
+                        <button class="want-to-read">Want to Read</button>
+                        <span class="rating">Rate it: ★★★</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="third.js"></script>
+</body>
+</html>

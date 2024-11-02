@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/styles/mybooks.css">
+    <title>My Books</title>
+</head>
+<body>
+    <header>
+        <div class="logo">BookReads</div>
+        <nav>
+            <ul>
+                <li><a href="/api/books/global">Home</a></li>
+                <li><a href="/api/books/my-books">My Books</a></li>
+                <li class="dropdown">
+                    <a href="#">Browse ▾</a>
+                    <div class="dropdown-content">
+                        <a href="#">Recommendations</a>
+                        <a href="#">Choice Awards</a>
+                        <a href="#">Giveaways</a>
+                        <a href="#">New Releases</a>
+                        <a href="#">Lists</a>
+                        <a href="#">Explore</a>
+                        <a href="#">News & Interviews</a>
+                        <div class="favorite-genres">
+                            <h4>FAVORITE GENRES</h4>
+                            <a href="#">Art</a>
+                            <a href="#">Classics</a>
+                            <a href="#">Fantasy</a>
+                            <a href="#">Fiction</a>
+                            <a href="#">Horror</a>
+                            <a href="#">Mystery</a>
+                            <a href="#">Poetry</a>
+                            <a href="#">Psychology</a>
+                            <a href="#">All Genres</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">Community</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search books">
+            <span class="icon">🔍</span>
+        </div>
+        <div class="user-icons">
+            <span class="icon">🔔</span>
+            <span class="icon">📧</span>
+            <span class="icon">👤</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Sidebar for Bookshelves -->
+        <aside class="sidebar">
+            <h3>Bookshelves</h3>
+            <ul>
+                <li><a href="/api/books/my-books?category=all" class="<%= selectedCategory === 'all' ? 'active' : '' %>">All</a></li>
+                <li><a href="/api/books/my-books?category=Read" class="<%= selectedCategory === 'Read' ? 'active' : '' %>">Read</a></li>
+                <li><a href="/api/books/my-books?category=Want to Read" class="<%= selectedCategory === 'Want to Read' ? 'active' : '' %>">Want to Read</a></li>
+            </ul>
+            <button class="add-shelf">Add Shelf</button>
+            <div class="activity-links">
+                <p>Your Reading Activity</p>
+                <p>Review Drafts</p>
+                <p>Reading Challenge</p>
+                <p>Year in Books</p>
+                <p>Reading Stats</p>
+            </div>
+        </aside>
+
+        <!-- Main Book Content -->
+        <section class="main-content">
+            <h1>My Books</h1>
+            <div class="book-table">
+                <!-- Table Header -->
+                <div class="book-row header">
+                    <span>Cover</span>
+                    <span>Title</span>
+                    <span>Author</span>
+                    <span>My Rating</span>
+                    <span>My Review</span>
+                    <span>Date Added</span>
+                </div>
+                <!-- Book List -->
+                <% books.forEach(book => { %>
+                    <div class="book-row">
+                        <span class="cover">
+                            <% if (book.image) { %>
+                                <img src="<%= book.image %>" alt="<%= book.title %> Cover">
+                            <% } else { %>
+                                <img src="/path/to/default/image.jpg" alt="Default Cover">
+                            <% } %>
+                        </span>
+                        <span><%= book.title %></span>
+                        <span><%= book.author %></span>
+                        <span>
+                            <form method="POST" action="/api/books/<%= book._id %>/rating?_method=PUT">
+                                <select name="rating" onchange="this.form.submit()">
+                                    <option value="">Rate this book</option>
+                                    <option value="1" <%= book.myRating === 1 ? 'selected' : '' %>>★</option>
+                                    <option value="2" <%= book.myRating === 2 ? 'selected' : '' %>>★★</option>
+                                    <option value="3" <%= book.myRating === 3 ? 'selected' : '' %>>★★★</option>
+                                    <option value="4" <%= book.myRating === 4 ? 'selected' : '' %>>★★★★</option>
+                                    <option value="5" <%= book.myRating === 5 ? 'selected' : '' %>>★★★★★</option>
+                                </select>
+                            </form>
+                        </span>
+                        <span>
+                            <% if (book.category === 'Read') { %>
+                                <% if (book.myReview) { %>
+                                    <%= book.myReview %>
+                                    <button onclick="openEditReview('<%= book._id %>', '<%= book.myReview %>')" class="edit-review-btn">Edit</button>
+                                <% } else { %>
+                                    <button onclick="openAddReview('<%= book._id %>')" class="add-review-btn">Add Review</button>
+                                <% } %>
+                            <% } else { %>
+                                Mark as read to review
+                            <% } %>
+                        </span>
+                        <span><%= book.dateAdded.toLocaleDateString() %></span>
+                        <span class="actions">
+                            <form method="POST" action="/api/books/<%= book._id %>/status?_method=PUT" style="display: inline;">
+                                <select name="category" onchange="this.form.submit()">
+                                    <option value="Want to Read" <%= book.category === 'Want to Read' ? 'selected' : '' %>>Want to Read</option>
+                                    <option value="Read" <%= book.category === 'Read' ? 'selected' : '' %>>Read</option>
+                                </select>
+                            </form>
+                            <form method="POST" action="/api/books/<%= book._id %>?_method=DELETE" style="display: inline;">
+                                <button type="submit" class="delete-btn">Delete</button>
+                            </form>
+                        </span>
+                    </div>
+                <% }) %>
+            </div>
+            <!-- Review Modal -->
+            <div id="reviewModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Write Review</h2>
+                    <form id="reviewForm" method="POST">
+                        <textarea name="reviewText" rows="4" required></textarea>
+                        <button type="submit">Submit Review</button>
+                    </form>
+                </div>
+            </div>
+
+            <script>
+            const modal = document.getElementById('reviewModal');
+            const closeBtn = document.getElementsByClassName('close')[0];
+            const reviewForm = document.getElementById('reviewForm');
+
+            function openAddReview(bookId) {
+                modal.style.display = 'block';
+                reviewForm.action = `/api/books/${bookId}/review?_method=PUT`;
+                reviewForm.querySelector('textarea').value = '';
+            }
+
+            function openEditReview(bookId, currentReview) {
+                modal.style.display = 'block';
+                reviewForm.action = `/api/books/${bookId}/review?_method=PUT`;
+                reviewForm.querySelector('textarea').value = currentReview;
+            }
+
+            closeBtn.onclick = function() {
+                modal.style.display = 'none';
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            }
+            </script>
+        </section>
+    </main>
+</body>
+</html>
